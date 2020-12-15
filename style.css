@@ -1,8 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 body{
     padding:0;
+    font-family: 'Montserrat', sans-serif;
 }
 #myCanvas{
     margin:auto;
     display: block;
     border:1px solid grey;
 }
+.heading{
+    font-weight: bolder;
+    background-color: bisque;
+}
+.container{
+    display:block;
+    text-align: center;
+    margin: 10px;
+}
+.size{
+    border:none;
+    background-color: rgb(237, 194, 100);
+    border-radius: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.brush{
+    margin:auto;
+    border:none;
+    background-color: cornflowerblue;
+    border-radius: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+}
+.colorPallete{
+    background-color: bisque;
+    border-radius: 0.5rem;
+    height: 20px;
+    width: 20px;
+    max-width: 10px;
+    padding-top:5px;
+    padding-left: 10px;
+    margin: 10px;
+}
+

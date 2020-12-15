@@ -7,8 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="myCanvas" height="300px" width="300px"></canvas>
-    <p id="mydata"></p>
+    <div class="container">
+        <button type="submit" id="spray" class="brush" style="color: aliceblue;">Spray</button>
+        <button type="submit" id="lineSegment" class="brush" style="color: aliceblue;">Pencil</button>
+        <button type="submit" id="smudge" class="brush" style="color: aliceblue;">Smudge</button>
+        <button type="submit" id="brush" class="brush" style="color: aliceblue;">Brush</button>
+        <span type="submit" id="size1" class="size" onclick="size('3')">&nbsp;Thin&nbsp;</span>
+        <span type="submit" id="size2" class="size" onclick="size('6')">&nbsp;Medium&nbsp;</span>
+        <span type="submit" id="size3" class="size" onclick="size('9')">&nbsp;Thick&nbsp;</span>
+    </div>
+
+    <canvas id="myCanvas" height="400px" width="400px"></canvas>
+    <div class="container">
+        <p id="mydata" style="font-weight:bolder;"></p>
+            <button type="submit" id="eraser" class="brush" style="color: aliceblue; border:none;" >Eraser</button>
+            <span class="colorPallete" id="000000" onclick="pallete(this.id)" style="background-color:black"></span>
+            <span class="colorPallete" id="808080" onclick="pallete(this.id)" style="background-color:gray"></span>
+            <span class="colorPallete" id="FFA500" onclick="pallete(this.id)" style="background-color:#FFA500"></span>
+            <span class="colorPallete" id="0000FF" onclick="pallete(this.id)" style="background-color:#0000FF"></span>
+            <span class="colorPallete" id="008000" onclick="pallete(this.id)" style="background-color:#008000"></span>
+            <span class="colorPallete" id="FF0000" onclick="pallete(this.id)" style="background-color:#FF0000"></span>
+            <span class="colorPallete" id="FF0000" onclick="pallete(this.id)" style="background-color:#00FFFF"></span>
+            <span class="colorPallete" id="FF0000" onclick="pallete(this.id)" style="background-color:#FFFF00"></span>
+            <span class="colorPallete" id="FF0000" onclick="pallete(this.id)" style="background-color:#FF00FF"></span>
+    </div>
+
     <script src="paint.js" type="text/javascript"></script>
 </body>
 </html>
