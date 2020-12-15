@@ -76,8 +76,7 @@ function pallete(id){
 }
 
 function eraser(){
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = 'rgb(255, 255, 255)';
+    ctx.shadowBlur = 0;
     ctx.lineJoin = ctx.lineCap = 'round'; 
     ctx.strokeStyle = "#FFFFFF";
     ctx.lineTo(x,y);
