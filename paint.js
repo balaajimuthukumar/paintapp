@@ -7,7 +7,8 @@ var spreadx = 0;
 var spready = 0;
 var func = eval("spray");
 var color ='#000000';
-
+var startx = 0;
+var starty = 0;
 //listens to all the buttons and select the 
 for (i = 0; i < query.length; i++) {
     query[i].addEventListener("click", function(event) {
@@ -20,16 +21,36 @@ myCanvas.addEventListener('mousemove',event=>valueUpdate(event));
 
 //drawing a line segment using mouse click
 myCanvas.addEventListener('mousedown',e =>{
-    ctx.beginPath();
-    ctx.moveTo(x, y);
+
+    if(func != window['triangle']){
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+
+    startx = e.offsetX;
+    starty = e.offsetY;
     ctx.strokeStyle = color;
     ctx.fillStyle = color;
+    ctx.fill();
+
     //painting across the travelled places
     myCanvas.addEventListener('mousemove',func);
 });
 
 //Stops drawing when the mouse click is released
 myCanvas.addEventListener('mouseup',e =>{
+    if(func==window['triangle']){
+        let value = x - startx;
+        ctx.lineTo(x,y);
+        ctx.stroke();
+        ctx.moveTo(startx,starty);
+        ctx.lineTo((startx-value),y);
+        ctx.stroke();
+        ctx.moveTo(x,y);
+        ctx.lineTo((startx-value),y);
+        ctx.stroke();
+    }
+    ctx.closePath();
     myCanvas.removeEventListener('mousemove',func);
 });
 
@@ -85,4 +106,10 @@ function eraser(){
 
 function size(string){
     ctx.lineWidth = string;
+}
+
+function triangle(){
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = color;
+    ctx.moveTo(startx,starty);
 }
